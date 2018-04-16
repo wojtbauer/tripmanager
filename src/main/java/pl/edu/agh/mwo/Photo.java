@@ -11,5 +11,9 @@ public class Photo {
 	public Photo() {
 		comment = "N/A";
 	}
+	
+   public String getComment(){
+	   return comment;
+   }
 
 }

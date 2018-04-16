@@ -13,9 +13,9 @@ public class Trip {
 	}
 	
 
-	Collection <Photo> photos = new ArrayList<Photo>();
+	ArrayList <Photo> photos = new ArrayList<Photo>();
 	
-	public Collection<Photo> getPhotos() {
+	public ArrayList<Photo> getPhotos() {
 		return photos;
 	}
 	

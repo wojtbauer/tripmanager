@@ -25,21 +25,27 @@ public class TripTest {
 		Trip trip = new Trip("a", "family trip");
 		Photo photo1 = new Photo();
 		Photo photo2 = new Photo();
-		Photo photo3 = new Photo();
 		trip.addPhoto(photo1);
 		trip.addPhoto(photo2);
-		trip.addPhoto(photo3);
-		
-		Photo[] ExpectedArray = {photo1, photo2, photo3};
-		Photo[] ResultArray =  (Photo[]) trip.getPhotos().toArray();
-		
-		assertArrayEquals(ExpectedArray, ResultArray);
-	}
+		Collection<Photo> expectedPhotos = new ArrayList<Photo>();
+		expectedPhotos.add(photo1);
+		expectedPhotos.add(photo2);
+		assertEquals(expectedPhotos, trip.getPhotos());
+
+	
+			}
 	
 	@Test 
 	public void testGetTripName (){
 		Trip trip = new Trip("b", "familytrip");
 		assertEquals(trip.getName(),"b");
+	
+	}
+	
+	@Test 
+	public void testGetPhotoComment (){
+		Photo photo = new Photo("Very nice trip");
+		assertEquals(photo.getComment(),"Very nice trip");
 	
 	}
 

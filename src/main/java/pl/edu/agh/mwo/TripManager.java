@@ -24,10 +24,9 @@ public class TripManager {
 	public String findTrip (String tripName){
 		String foundTrip = null;
 		for (Trip t:trips){
-			t.getName().equals(tripName);
+			if (t.getName().equals(tripName))
 			foundTrip = t.getName();
-			
-			break;
+		
 		}
 		return foundTrip;
 		
