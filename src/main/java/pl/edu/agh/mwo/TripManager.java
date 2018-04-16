@@ -26,8 +26,7 @@ public class TripManager {
 		for (Trip t:trips){
 			t.getName().equals(tripName);
 			foundTrip = t.getName();
-			//String temp = t.getName();
-			//if (temp == tripName) foundTrip = t.getName();
+			
 			break;
 		}
 		return foundTrip;
