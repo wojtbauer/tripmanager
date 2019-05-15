@@ -57,4 +57,14 @@ public class TripManagerTest {
 	    assertEquals(trip, results.get(0));
     }
 	
+    @Test
+    public void testFindTripByDescription() throws TripAlreadyExistsException {
+        Trip trip = new Trip("trip1","trip2");
+        trip.setDescription("trip1");
+        tripManager.add(trip);
+		List<Trip> results = tripManager.findTrip("trip1");
+		assertEquals(1, results.size());
+		assertEquals(trip, results.get(0));
+	}
+	
 }
