@@ -68,5 +68,23 @@ public class TripManagerTest {
 		assertEquals(1, results.size());
 		assertEquals(trip, results.get(0));
 	}
+    
+    
+    @Test
+	public void testFindByComment() throws TripAlreadyExistsException {
+		Photo photo = new Photo();
+		photo.setComment("Nice photo");
+		trip.addPhoto(photo);
+
+		Photo photo1 = new Photo();
+		photo1.setComment("great photo");
+		Trip trip1 = new Trip("trip1","trip2");
+		trip1.addPhoto(photo1);
+		tripManager.add(trip);
+		tripManager.add(trip1);
+		List<Trip> results = tripManager.findTrip("great photo");
+		assertEquals(1, results.size());
+		assertEquals(trip1, results.get(0));
+	}
 	
 }
