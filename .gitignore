@@ -4,3 +4,5 @@
 .class
 .log
 /target/
+.idea/
+.metadata
