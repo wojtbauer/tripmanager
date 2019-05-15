@@ -49,9 +49,10 @@ public class TripManagerTest {
 
 	@Test
     public void testFindTripByName() throws TripAlreadyExistsException {
-	    Trip trip = new Trip("trip1","trip2");
+	    Trip trip1 = new Trip("trip1","trip2");
 	    trip.setName("trip1");
-	    tripManager.add(trip);
+        tripManager.add(trip);
+	    tripManager.add(trip1);
 		List<Trip> results = tripManager.findTrip("trip1");
 	    assertEquals(1, results.size());
 	    assertEquals(trip, results.get(0));
@@ -59,8 +60,9 @@ public class TripManagerTest {
 	
     @Test
     public void testFindTripByDescription() throws TripAlreadyExistsException {
-        Trip trip = new Trip("trip1","trip2");
+        Trip trip1 = new Trip("trip1","trip2");
         trip.setDescription("trip1");
+        tripManager.add(trip1);
         tripManager.add(trip);
 		List<Trip> results = tripManager.findTrip("trip1");
 		assertEquals(1, results.size());
