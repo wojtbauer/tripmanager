@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import java.util.List;
 
 public class TripManagerTest {
 
@@ -37,6 +38,13 @@ public class TripManagerTest {
 		assertEquals(1, tripManager.getTrips().size());
 		tripManager.remove(trip.getName());
 		assertEquals(0, tripManager.getTrips().size());
-		fail("chcemy zespuc");
+		//fail("chcemy zespuc");
 		}
+	
+	@Test
+	public void testFindTripEmptyString() throws Exception {
+		tripManager.add(trip);
+		assertEquals(trip,tripManager.findTrip(""));
+	}
+	
 }
